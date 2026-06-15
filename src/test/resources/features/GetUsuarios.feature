@@ -3,6 +3,7 @@ Feature: Metodo GET para listar usuarios cadastrados
   Background:
     * url 'https://serverest.dev'
 
+  @smoke
   Scenario: Listar todos os usuarios cadastrados
     Given path '/usuarios'
     When method Get

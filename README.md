@@ -31,6 +31,7 @@ src
     └── resources
         └── features
             └── GetUsuarios.feature
+            └── PostUsuario.feature
 ```
 
 ---
@@ -66,6 +67,51 @@ Limpar e executar novamente:
 ```bash
 mvn clean test
 ```
+
+---
+
+## Execução por Tags
+
+O Karate permite executar apenas cenários específicos utilizando tags.
+
+### Exemplo de Tag
+
+```gherkin
+@smoke
+Scenario: Consultar usuários
+    Given url 'https://serverest.dev/usuarios'
+    When method GET
+    Then status 200
+```
+
+### Executar uma Tag Específica
+
+```bash
+mvn test -Dkarate.options="--tags @smoke"
+```
+
+### Executar Outra Tag
+
+```bash
+mvn test -Dkarate.options="--tags @regression"
+```
+
+### Ignorar uma Tag
+
+```bash
+mvn test -Dkarate.options="--tags ~@ignore"
+```
+
+### Boas Práticas de Tags
+
+| Tag          | Objetivo                               |
+| ------------ | -------------------------------------- |
+| @smoke       | Validações críticas da aplicação       |
+| @regression  | Testes completos de regressão          |
+| @integration | Testes de integração                   |
+| @ignore      | Cenários temporariamente desabilitados |
+
+O uso de tags facilita a execução seletiva dos testes durante o desenvolvimento e em pipelines CI/CD.
 
 ---
 
