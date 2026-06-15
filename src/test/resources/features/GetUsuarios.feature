@@ -13,3 +13,9 @@ Feature: Metodo GET para listar usuarios cadastrados
     And param nome = 'narceja da silva'
     When method Get
     Then status 200
+
+  Scenario: Listar usuarios por nome e email
+    Given path '/usuarios'
+    And params {nome: 'narceja da silva', email: 'narceja@qa.com.br'}
+    When method Get
+    Then status 200
