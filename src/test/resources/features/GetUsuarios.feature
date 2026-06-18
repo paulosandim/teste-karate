@@ -1,7 +1,7 @@
 Feature: Metodo GET para listar usuarios cadastrados
 
   Background:
-    * url 'https://serverest.dev'
+    * url baseUrl
 
   @smoke
   Scenario: Listar todos os usuarios cadastrados

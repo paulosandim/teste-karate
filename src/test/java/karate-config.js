@@ -9,10 +9,9 @@ function fn() {
     myVarName: 'someValue'
   }
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+    config.baseUrl = 'https://serverest.dev';
+  } else if (env == 'qa') {
+    config.baseUrl = 'https://localhost:3000';
   }
   return config;
 }

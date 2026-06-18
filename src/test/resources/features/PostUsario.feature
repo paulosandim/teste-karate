@@ -1,7 +1,7 @@
 Feature: Metodo post para cadastrar usuarios
 
   Background:
-    * url 'https://serverest.dev'
+    * url baseUrlDev
 
   @criausuario
   Scenario: Cadastrar usuario com sucesso com body no corpo do teste
